@@ -19,7 +19,6 @@ Gem::Specification.new do |s|
   s.homepage = "https://rubyonrails.org"
 
   s.files = ["README.md", "MIT-LICENSE"]
-  s.executable << "rails"
 
   s.metadata = {
     "bug_tracker_uri"   => "https://github.com/rails/rails/issues",
