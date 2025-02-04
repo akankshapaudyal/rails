@@ -1,9 +1,28 @@
-*   The authentication generator's `SessionsController` sets the `Clear-Site-Data` header on logout.
+*   Update `rails new --minimal` option
 
-    By default the header will be set to `"cache","storage"` to help prevent data leakage after
-    logout via the browser's "back/forward cache".
+    Extend the `--minimal` flag to exlcude recently added features:
+    `skip_brakeman`, `skip_ci`, `skip_docker`, `skip_kamal`, `skip_rubocop`, `skip_solid` and `skip_thruster`.
 
-    *Mike Dalessio*
+    *eelcoj*
+
+*   Add `application-name` metadata to application layout
+
+    The following metatag will be added to `app/views/layouts/application.html.erb`
+
+    ```html
+    <meta name="application-name" content="Name of Rails Application">
+    ```
+
+    *Steve Polito*
+
+*   Use `secret_key_base` from ENV or credentials when present locally.
+
+    When ENV["SECRET_KEY_BASE"] or
+    `Rails.application.credentials.secret_key_base` is set for test or
+    development, it is used for the `Rails.config.secret_key_base`,
+    instead of generating a `tmp/local_secret.txt` file.
+
+    *Petrik de Heus*
 
 *   Introduce `RAILS_MASTER_KEY` placeholder in generated ci.yml files
 
